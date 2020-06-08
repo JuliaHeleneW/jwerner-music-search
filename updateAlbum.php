@@ -62,6 +62,7 @@ function updateAlbum()
     $stmt->execute($namedParameters);
 }
 
+$album;
 if(isset($_POST['submit']))
 {
     updateAlbum();
