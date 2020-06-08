@@ -14,6 +14,7 @@ $password="j1pprhuike445rf7";
 $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 //Errorhandling als Ausnahme/Exception festlegen
 $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$album=getAlbumInfo();
 
 //Funktion, um die bestehenden Daten eines Albums zu finden
 function getAlbumInfo()
@@ -62,7 +63,6 @@ function updateAlbum()
     $stmt->execute($namedParameters);
 }
 
-$album;
 if(isset($_POST['submit']))
 {
     updateAlbum();

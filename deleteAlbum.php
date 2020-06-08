@@ -15,7 +15,7 @@ if(isset($_GET['albumId'])){
 
 //Funktion, um Album zu löschen, Schutz vor SQL Injection
 function deleteAlbum(){
-  global $conn;
+  global $dbConn;
   $sql = "DELETE FROM albums WHERE albumId= :albumId";
   $namedParameters=array();
   $namedParameters[":albumId"]=$_GET['albumId'];

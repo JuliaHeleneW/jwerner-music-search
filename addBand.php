@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     //Errorhandling als Ausnahme/Exception festlegen
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    addAlbum();
+    addBand();
 }
 $host="eporqep6b4b8ql12.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
 $dbname="ihn134ea3dzfr2py";
