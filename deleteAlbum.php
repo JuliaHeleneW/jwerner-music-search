@@ -1,9 +1,9 @@
 <?php
 if(isset($_GET['albumId'])){
-  $host="localhost";
-  $dbname="project";
-  $username="web_user";
-  $password="s3cr3t";
+  $host="eporqep6b4b8ql12.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+  $dbname="ihn134ea3dzfr2py";
+  $username="k4jwjzer9w7qpn4t";
+  $password="j1pprhuike445rf7";
   //Verbindung zur Datenbank herstellen (ungültig)
   $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
   //Errorhandling als Ausnahme/Exception festlegen
