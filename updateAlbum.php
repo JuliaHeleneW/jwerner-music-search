@@ -39,7 +39,7 @@ if(isset($_GET['albumId']))
 //Funktion, um die Daten des Albums zu updaten mit User Input, Schutz vor SQL Injection
 function updateAlbum()
 {
-    global $conn;
+    global $dbConn;
     $sql="UPDATE albums 
          SET name= :name,
              description= :description,
@@ -59,7 +59,7 @@ function updateAlbum()
     $namedParameters[":price"]=$_POST['price'];
     $namedParameters[":cover"]=$_POST['cover'];
     $namedParameters[":albumId"] = $_POST['albumId'];
-    $stmt=$conn->prepare($sql);
+    $stmt=$dbConn->prepare($sql);
     $stmt->execute($namedParameters);
 }
 
@@ -93,9 +93,9 @@ function selectBand($aband)
 //Funktion, um die vorhandenen Genres zu bekommen
 function getGenres()
 {
-    global $conn;
+    global $dbConn;
     $sql="SELECT name,genreId FROM genres";
-    $stmt=$conn->prepare($sql);
+    $stmt=$dbConn->prepare($sql);
     $stmt->execute();
     $genres=$stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach($genres as $agenre)
@@ -107,9 +107,9 @@ function getGenres()
 //Funktion, um die vorhandenen Bands zu bekommen
 function getBands()
 {
-    global $conn;
+    global $dbConn;
     $sql="SELECT name,bandId FROM bands";
-    $stmt=$conn->prepare($sql);
+    $stmt=$dbConn->prepare($sql);
     $stmt->execute();
     $bands=$stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach($bands as $band)
