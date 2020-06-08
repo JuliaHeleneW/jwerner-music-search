@@ -19,11 +19,11 @@ $album=getAlbumInfo();
 //Funktion, um die bestehenden Daten eines Albums zu finden
 function getAlbumInfo()
 {
-  global $conn;
+  global $dbConn;
   $sql = "SELECT * FROM albums WHERE albumId = :albumId";
   $namedParameters = array();
   $namedParameters[":albumId"] = $_GET['albumId'];
-  $stmt = $conn->prepare($sql);
+  $stmt = $dbConn->prepare($sql);
   $stmt->execute($namedParameters);
   $record = $stmt->fetch(PDO::FETCH_ASSOC);
   
