@@ -41,15 +41,15 @@ function displayAlbums()
     if(($_GET['releaseDate'])!="select"){
         if(($_GET['releaseDate'])==1)
         {
-        $sql=$sql." AND releaseDate <  '2000'";
+        $sql=$sql." AND releaseDate <  '2000-01-01'";
         }
         else if(($_GET['releaseDate'])==2)
         {
-        $sql=$sql." AND releaseDate >  '2000' AND releaseDate <  '2010'";
+        $sql=$sql." AND releaseDate >=  '2000-01-01' AND releaseDate <=  '2010-12-31'";
         }
         else if(($_GET['releaseDate'])==3)
         {
-        $sql=$sql." AND releaseDate >  '2010'";
+        $sql=$sql." AND releaseDate >=  '2010-01-01'";
         }
     }
     //Vorbereiten, Ausführen, Daten holen
